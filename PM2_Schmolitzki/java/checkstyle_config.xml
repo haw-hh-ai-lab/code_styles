@@ -27,7 +27,12 @@
       <property name="authorFormat" value="^[A-Za-z0-9]+[A-Za-z0-9 ]*"/>
       <property name="allowUnknownTags" value="true"/>
     </module>
-    <module name="JavadocVariable"/>
+    <!-- comments on every field are overkill, but public fields should 
+         have a good reason to exist at all!
+      -->
+    <module name="JavadocVariable">
+      <property name="scope" value="public"/>
+    </module>
     <module name="WriteTag"/>
     <module name="NonEmptyAtclauseDescription"/>
     <module name="JavadocTagContinuationIndentation"/>
@@ -149,7 +154,6 @@
     <module name="OneStatementPerLine"/>
     <module name="VariableDeclarationUsageDistance"/>
     <module name="OverloadMethodsDeclarationOrder"/>
-    <module name="DesignForExtension"/>
     <module name="FinalClass"/>
     <module name="InnerTypeLast"/>
     <module name="HideUtilityClassConstructor"/>
